@@ -1,0 +1,139 @@
+    * {
+        box-sizing: border-box;
+    }
+    
+    .main {
+        height: 1100px;
+        width: 100%;
+        display: flex;
+        border: 5px solid;
+        padding: 35px;
+        /* aadne screen nanu kariye to ek adjust tyi jaay */
+        /* flex-wrap: nowrap; defolt */
+        flex-wrap: wrap;
+    }
+    
+    .card {
+        height: 500px;
+        width: 300px;
+        background: transparent;
+        box-shadow: 0px 0px 8px gray;
+        margin: 6px;
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+    }
+    
+    .card .image {
+        background-color: transparent;
+        height: 330px;
+        width: 300px;
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* padding-top: 45px; */
+        position: relative;
+    }
+    
+    .card .image .ne {
+        height: 25px;
+        width: 55px;
+        background-color: rgb(235, 91, 91);
+        color: #fff;
+        text-align: center;
+        line-height: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    .card .image .front {
+        height: inherit;
+        width: inherit;
+        background-color: rgba(0, 0, 0, .03);
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+        /* back vadu hidden karva mate hoy backface  */
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+    }
+    
+    .card .image .back {
+        height: inherit;
+        width: inherit;
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+        backface-visibility: hidden;
+        transform: rotateY(0deg);
+    }
+    
+    .card .image:hover .front {
+        transform: rotateY(0deg);
+    }
+    
+    .card .image:hover .back {
+        transform: rotateY(180deg);
+    }
+    
+    .card .image img {
+        margin-top: 15px
+    }
+    
+    .card .image .quick {
+        height: 50px;
+        width: 300px;
+        background: #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        /* display: none; */
+        opacity: 0;
+        transition: 1s;
+    }
+    
+    .image:hover .quick {
+        top: 280px;
+        /* display: block; */
+        opacity: 1;
+    }
+    
+    .card .quick:hover {
+        background-color: #2fdab8;
+    }
+    
+    .card .text .blue {
+        text-align: center;
+        margin-top: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: red;
+        font-size: 1.2rem;
+    }
+    
+    .card .text .rupee {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 1.2rem;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .card .text .rupee span {
+        margin-left: 20px;
+        text-decoration: line-through;
+        opacity: 0.5;
+    }
